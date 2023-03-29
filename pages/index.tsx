@@ -127,7 +127,7 @@ export default function Home() {
         <section className="py-4">
           <div className="flex gap-5 flex-wrap">
             <div className="p-5 shadow-xl">
-              <Image src={website} height={400} width={400} />
+              <Image src={website} height={400} width={400} alt="website" />
               <h3 className="text-center font-bold py-5 text-xl">
                 Website Development
               </h3>
@@ -145,7 +145,7 @@ export default function Home() {
             </div>
 
             <div className="p-5 shadow-xl">
-              <Image src={cloud} height={400} width={400} />
+              <Image src={cloud} height={400} width={400} alt="cloud" />
               <h3 className="text-center font-bold py-5 text-xl">
                 Cloud Computing Services
               </h3>
@@ -163,7 +163,7 @@ export default function Home() {
             </div>
 
             <div className="p-5 boshadow-xl ">
-              <Image src={coding} height={400} width={400} />
+              <Image src={coding} height={400} width={400} alt="coding" />
               <h3 className="text-center font-bold py-5 text-xl">
                 DevOps Automation
               </h3>
