@@ -5,6 +5,9 @@ import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import Image from "next/image";
 import mello from "../public/undraw_mello_otq1.svg";
 import useDownloader from "react-use-downloader";
+import coding from "../public/undraw-programming.svg";
+import cloud from "../public/undraw-cloud.svg";
+import website from "../public/undraw-website.svg";
 
 export default function Home() {
   const { download } = useDownloader();
@@ -24,7 +27,7 @@ export default function Home() {
       </Head>
       <main className="bg-white px-8">
         <section className=" min-h-screen">
-          <nav className=" mb-8 py-10 flex justify-between">
+          <nav className=" mb-8 py-8 flex justify-between">
             <h1 className="text-2xl font-burtons">Harsh</h1>
             <ul className="flex items-center">
               <li>
@@ -40,7 +43,7 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          <div className="text-left p-5">
+          <div className="text-left p-4">
             <h2 className="text-teal-400 py-2 font-medium text-4xl">
               Harshvardhan Singh Jadon
             </h2>
@@ -71,7 +74,7 @@ export default function Home() {
             <Image src={mello} alt="Wave" className="" />
           </div>
         </section>
-        <section>
+        <section className="p-4">
           <div>
             <h2 className="text-2xl text-center py-3">More About Me</h2>
             <p className="text-center leading-7">
@@ -89,6 +92,45 @@ export default function Home() {
               <span className="text-teal-600 font-bold">NextJS</span>,{" "}
               <span className="text-teal-600 font-bold">Tailwind CSS</span>.
             </p>
+          </div>
+        </section>
+        <section className="py-4">
+          <div className="flex gap-5 flex-wrap">
+            <div className="p-5 shadow-xl">
+              <Image src={website} height={400} width={400} />
+              <h3 className="text-center font-bold py-5 text-xl">
+                Website Development
+              </h3>
+              <p className="text-md py-5 leading-7 text-gray-800 text-center">
+                I have a strong interest in front-end (front-end) web
+                development and have self-taught HTML5, CSS3, and React.js. I
+                can create various types of websites on different platforms.
+              </p>
+            </div>
+
+            <div className="p-5 shadow-xl">
+              <Image src={cloud} height={400} width={400} />
+              <h3 className="text-center font-bold py-5 text-xl">
+                Cloud Computing Services
+              </h3>
+              <p className="text-md py-5 leading-7 text-gray-800 text-center">
+                I have experience working on cloud computing services with
+                Microsoft Azure and Amazon Web Services and am highly interested
+                in it.
+              </p>
+            </div>
+
+            <div className="p-5 shadow-xl">
+              <Image src={coding} height={400} width={400} />
+              <h3 className="text-center font-bold py-5 text-xl">
+                DevOps Automation
+              </h3>
+              <p className="text-md py-5 leading-7 text-gray-800 text-center">
+                I'm currently studying about DevOps Architecture and the
+                numerous automation tools it includes for CI/CD Pipeline,
+                Containerization, Orchestration, and various cloud services.
+              </p>
+            </div>
           </div>
         </section>
       </main>
