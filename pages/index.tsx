@@ -8,12 +8,15 @@ import useDownloader from "react-use-downloader";
 import coding from "../public/undraw-programming.svg";
 import cloud from "../public/undraw-cloud.svg";
 import website from "../public/undraw-website.svg";
+import { useState } from "react";
 
 export default function Home() {
   const { download } = useDownloader();
 
   const fileUrl = "cv.pdf";
   const filename = "Harsh-Resume.pdf";
+
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <>
       <Head>
@@ -25,13 +28,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white px-8">
+      <main className={darkMode ? "px-8" : "bg-white px-8 text-black"}>
         <section className=" min-h-screen">
           <nav className=" mb-8 py-8 flex justify-between">
             <h1 className="text-2xl font-burtons">Harsh</h1>
             <ul className="flex items-center">
               <li>
-                <BsFillMoonStarsFill className="cursor-pointer text-2xl" />
+                <BsFillMoonStarsFill
+                  className="cursor-pointer text-2xl"
+                  onClick={() => {
+                    if (darkMode) {
+                      setDarkMode(false);
+                    } else {
+                      setDarkMode(true);
+                    }
+                  }}
+                />
               </li>
               <li>
                 <button
@@ -51,12 +63,24 @@ export default function Home() {
               <span>Front-End Dev</span> <span>DevOps</span>{" "}
               <span>Cloud Services</span>
             </h3>
-            <p className="text-md py-5 leading-8 text-gray-800">
+            <p
+              className={
+                darkMode
+                  ? "text-md py-5 leading-8 text-gray-300"
+                  : "text-md py-5 leading-8 text-gray-800"
+              }
+            >
               Namaste 🙏, Welcome to my portfolio, I'm Harshvardhan Singh jadon
               from Gwalior, Madhya Pradesh.
             </p>
           </div>
-          <div className="text-4xl text-gray-700 flex justify-center gap-8">
+          <div
+            className={
+              darkMode
+                ? "text-4xl text-gray-200 flex justify-center gap-8"
+                : "text-4xl text-gray-700 flex justify-center gap-8"
+            }
+          >
             <a href="https://www.linkedin.com/in/jadonharsh/" target="blank">
               <AiFillLinkedin className="cursor-pointer" />
             </a>
@@ -77,7 +101,13 @@ export default function Home() {
         <section className="p-4">
           <div>
             <h2 className="text-2xl text-center py-3">More About Me</h2>
-            <p className="text-center leading-7">
+            <p
+              className={
+                darkMode
+                  ? "leading-7 text-center text-gray-300"
+                  : "leading-7 text-center"
+              }
+            >
               I am an <span className="text-teal-600 font-bold">Analyst</span>{" "}
               by profession in{" "}
               <span className="text-teal-600 font-bold">@HCLTech</span> managing
@@ -101,7 +131,13 @@ export default function Home() {
               <h3 className="text-center font-bold py-5 text-xl">
                 Website Development
               </h3>
-              <p className="text-md py-5 leading-7 text-gray-800 text-center">
+              <p
+                className={
+                  darkMode
+                    ? "text-md py-5 leading-8 text-gray-300 text-center"
+                    : "text-md py-5 leading-8 text-center text-gray-800"
+                }
+              >
                 I have a strong interest in front-end (front-end) web
                 development and have self-taught HTML5, CSS3, and React.js. I
                 can create various types of websites on different platforms.
@@ -113,19 +149,31 @@ export default function Home() {
               <h3 className="text-center font-bold py-5 text-xl">
                 Cloud Computing Services
               </h3>
-              <p className="text-md py-5 leading-7 text-gray-800 text-center">
+              <p
+                className={
+                  darkMode
+                    ? "text-md py-5 leading-8 text-gray-300 text-center"
+                    : "text-md py-5 leading-8 text-center text-gray-800"
+                }
+              >
                 I have experience working on cloud computing services with
                 Microsoft Azure and Amazon Web Services and am highly interested
                 in it.
               </p>
             </div>
 
-            <div className="p-5 shadow-xl">
+            <div className="p-5 boshadow-xl ">
               <Image src={coding} height={400} width={400} />
               <h3 className="text-center font-bold py-5 text-xl">
                 DevOps Automation
               </h3>
-              <p className="text-md py-5 leading-7 text-gray-800 text-center">
+              <p
+                className={
+                  darkMode
+                    ? "text-md py-5 leading-8 text-gray-300 text-center"
+                    : "text-md py-5 leading-8 text-center text-gray-800"
+                }
+              >
                 I'm currently studying about DevOps Architecture and the
                 numerous automation tools it includes for CI/CD Pipeline,
                 Containerization, Orchestration, and various cloud services.
